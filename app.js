@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "https://inv-elasto-front.vercel.app",
+  origin: "https://elastomechinventory.in",
   credentials: true, // Allows cookies to be sent with requests
 }));
 // Serve static files
