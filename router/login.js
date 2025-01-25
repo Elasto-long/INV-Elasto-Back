@@ -2,7 +2,9 @@ import express from "express";
 
 // Predefined users with username, password, and role
 const users = [
-  { username: "admin", password: "admin123@", role: "admin" },
+  { username: "Kajal", password: "kp56@", role: "admin" },
+  { username: "Anush", password: "as89@", role: "admin" },
+  { username: "Nupur", password: "na34@", role: "admin" },
   { username: "worker", password: "worker123@", role: "worker" },
 ];
 
