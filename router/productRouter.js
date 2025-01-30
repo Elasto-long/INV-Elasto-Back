@@ -86,6 +86,36 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Delete logic
+// DELETE a product
+router.delete("/:id", async (req, res) => {
+  try {
+    const productId = req.params.id;
+
+    // Check if the product exists before trying to delete
+    const product = await Product.findById(productId);
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    // Optional: Handle related dependencies (e.g., transaction logs, formulas)
+    // Example: Deleting related logs if necessary (be careful with related data)
+    // You can also delete related formulas or any other dependencies, if needed.
+
+    // Delete the product
+    await Product.findByIdAndDelete(productId);
+
+    // Send a success response
+    res.status(200).json({ message: "Product deleted successfully" });
+
+  } catch (err) {
+    console.error(err); // Log error for debugging
+    res.status(500).json({ error: "Error deleting product", message: err.message });
+  }
+});
+
+
 
 // GET transaction logs for a product
 router.get("/:id/logs", async (req, res) => {
