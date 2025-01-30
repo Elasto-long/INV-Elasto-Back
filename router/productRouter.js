@@ -120,7 +120,25 @@ router.get("/:id", async (req, res) => {
       .status(500)
       .json({ error: "Error fetching transaction logs", message: err.message });
   }
+  
 });
+router.delete("/:id", async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const product = await Product.findByIdAndDelete(productId); // Fixed function name
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    res.json({ product });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: "Error deleting product", message: err.message }); // Updated error message
+  }
+});
+
 
 // POST a new transaction log for a product
 
