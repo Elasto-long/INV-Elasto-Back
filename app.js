@@ -182,6 +182,7 @@ app.post("/api/formulas", async (req, res) => {
       lotMultiplier,
       ingredients,
       totalWeight,
+      hardness,
     });
     await newFormula.save();
     res.status(201).json({
