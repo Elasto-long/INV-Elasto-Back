@@ -15,6 +15,7 @@ const formulaLogSchema = new mongoose.Schema({
 const formulaSchema = new mongoose.Schema({
   name: { type: String, required: true },
   lotMultiplier: { type: String, required: true }, // Added lotMultiplier field
+  hardness: { type: String, required: true }, 
   ingredients: [
     {
       type: { type: String, required: true },
