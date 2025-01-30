@@ -155,7 +155,7 @@ app.get("/api/formulas/:id", async (req, res) => {
 });
 
 app.post("/api/formulas", async (req, res) => {
-  const { name, lotMultiplier, ingredients, totalWeight } = req.body;
+  const { name, lotMultiplier, ingredients, totalWeight , hardness } = req.body;
 
   if (!name || name.trim() === "") {
     return res.status(400).json({ message: "Formula name is required" });
