@@ -8,6 +8,17 @@ const transactionLogSchema = new mongoose.Schema({
   outward: { type: Number, default: 0 }, // Quantity issued
   balance: { type: Number, default: 0 }, // Current balance after the transaction
   remarks: { type: String }, // Additional remarks about the transaction
+  shift: { type: String }, // Shift information
+  workerName: { type: String }, // Name of the worker
+  batchNumber: { type: String }, // Batch number associated with the transaction
+  actualProduction: { type: Number }, // Actual production quantity
+  rejection: { type: Number }, // Rejection quantity
+  machineNo: { type: String }, // Machine number associated with the transaction
+  supervisedBy: { type: String }, // Name of the supervisor
+  timeStart: { type: String }, // Start time of the transaction
+  timeEnd: { type: String }, // End time of the transaction
+  curingTemp: { type: String }, // Curing temperature
+  reworkScrap: { type: Number }, // Rework or scrap quantity
 });
 
 const productSchema = new mongoose.Schema({
