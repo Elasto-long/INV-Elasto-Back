@@ -175,7 +175,7 @@ router.delete("/:id", async (req, res) => {
 router.post("/:id/log", async (req, res) => {
   try {
     const productId = req.params.id;
-    const { particulars, inward, outward, remarks } = req.body;
+    const { particulars, inward, outward, remarks ,shift,workerName,batchNumber,actualProduction,rejection,machineNo,supervisedBy,timeStart,timeEnd,curingTemp,reworkScrap } = req.body;
 
     // Validation for inward and outward quantities
     if (inward < 0 || outward < 0) {
@@ -201,6 +201,17 @@ router.post("/:id/log", async (req, res) => {
       outward,
       balance: newBalance,
       remarks,
+      shift,
+      workerName,
+      batchNumber,
+      actualProduction,
+      rejection,
+      machineNo,
+      supervisedBy,
+      timeStart,
+      timeEnd,
+      curingTemp,
+      reworkScrap
     };
 
     // Add log to product's transaction logs
