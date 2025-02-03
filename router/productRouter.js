@@ -34,6 +34,7 @@ router.post("/", async (req, res) => {
       cycleTime,
       expectedCycles,
       noOfLabours,
+      hardness
       lastUpdated,
     } = req.body;
 
